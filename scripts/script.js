@@ -32,9 +32,13 @@ function exportCard() {
   // Get the card element to export
   const cardElement = document.getElementById("card-content");
 
-  // Use html2canvas to create an image
-  html2canvas(cardElement).then((canvas) => {
-    // Create an image
+  // Use html2canvas to create an image with transparent background
+  html2canvas(cardElement, {
+    backgroundColor: null, // This makes the background transparent
+    scale: 2, // Improve the quality by scaling up
+    logging: false, // Disable logging to console
+  }).then((canvas) => {
+    // Create an image with PNG format and transparency
     const image = canvas.toDataURL("image/png");
 
     // Create a temporary link element
