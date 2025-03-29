@@ -21,4 +21,34 @@ document.addEventListener("DOMContentLoaded", function() {
             element.innerHTML = param;
         }
     }
+
+    const exportButton = document.getElementById("export-button");
+    if (exportButton) {
+      exportButton.addEventListener("click", exportCard);
+    }
 });
+
+function exportCard() {
+  // Get the card element to export
+  const cardElement = document.getElementById("card-content");
+
+  // Use html2canvas to create an image
+  html2canvas(cardElement).then((canvas) => {
+    // Create an image
+    const image = canvas.toDataURL("image/png");
+
+    // Create a temporary link element
+    const link = document.createElement("a");
+    link.href = image;
+
+    // Set filename to download - include the number if available
+    const numberElement = document.getElementById("number");
+    const numberText = numberElement ? numberElement.innerText : "card";
+    link.download = `stand-number-${numberText}.png`;
+
+    // Append, click and remove the link to trigger download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+}

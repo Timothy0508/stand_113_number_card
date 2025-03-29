@@ -57,3 +57,20 @@ body {
     padding: 5px;
     font-size: 3em;
 }
+
+#export-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px 0;
+    width: 70vw;
+}
+
+#export-button:hover {
+    background-color: #45a049;
+}
