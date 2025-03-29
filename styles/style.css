@@ -22,8 +22,14 @@ body {
     justify-content: start;
     vertical-align: middle;
     align-items: center;
-    background-color: white;
     color: black;
+    transition-duration: 0.4s;
+    background-color: white;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px #4CAF50;
+    transform: scale(1.02);
 }
 
 .card-header {
@@ -43,6 +49,7 @@ body {
     vertical-align: middle;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 
 .card-body p {
